@@ -1,0 +1,35 @@
+<h1>Add Employee</h1>
+<div mat-dialog-content>
+    <form [formGroup]="employeeForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Employee Name</mat-label>
+            <input formControlName="employeeName" matInput placeholder="Ex - Manoj Ahir">
+          </mat-form-field>
+    
+    <br>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Designation</mat-label>
+            <input formControlName="employeeDesignation" matInput placeholder="Ex - RPA Developer">
+          </mat-form-field>
+    
+    <br>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="employeeDepartment" matNativeControl required>
+              <mat-option value="Salesforce">Salesforce</mat-option>
+              <mat-option value="UI/UX">UI/UX</mat-option>
+              <mat-option value="Automation">Automation</mat-option>
+              <mat-option value="Development">Development</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button>
+
+</div>
